@@ -31,11 +31,6 @@ class UserRouter {
 
     this._router.put(
       "/:id",
-      body("first_name").isLength({ min: 2 }),
-      body("last_name").isLength({ min: 2 }),
-      body('title').custom(isTitleValid),
-      body("email").isEmail(),
-      body("dep_id").isNumeric(),
       errorWrapper(userController.updateUser)
     );
 

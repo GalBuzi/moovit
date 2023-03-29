@@ -29,7 +29,6 @@ class DepartmentRouter {
 
     this._router.put(
       "/:id",
-      body("name").isLength({ min: 2 }),
       errorWrapper(departmentController.updateDepartment)
     );
 
